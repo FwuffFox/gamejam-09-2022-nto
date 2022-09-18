@@ -2,19 +2,8 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
-	private int health = 100;
-	public int Health
-	{
-		get => health;
-		set
-		{
-			health -= value;
-			if (health >= 0) return;
-			health = 0;
-			Death();
-		}
-	}
-	
+	[SerializeField] private int health = 100;
+
 	[SerializeField]
 	private AnimationClip dieAnim;
 	private Animation anim;
@@ -24,10 +13,16 @@ public class HealthSystem : MonoBehaviour
 		anim = GetComponent<Animation>();
 	}
 
+	public void GetDamage(int damage)
+	{
+		health -= damage;
+		if (health <= 0) Death();
+	}
 	private void Death()
 	{
-		anim.clip = dieAnim;
-		anim.Play();
-		Destroy(this);
+		//anim.clip = dieAnim;
+		//anim.Play();
+		print($"{gameObject.name} died");
+		Destroy(gameObject, 1);
 	}
 }

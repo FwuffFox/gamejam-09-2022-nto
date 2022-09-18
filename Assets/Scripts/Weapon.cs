@@ -8,7 +8,6 @@ public class Weapon : MonoBehaviour
     private Animation anim;
     [HideInInspector]
     public bool canShoot=true;
-	[HideInInspector]
     public int damage=15;
 	public int range=300;
     public float animSpeed=1.3f;
@@ -39,7 +38,7 @@ public class Weapon : MonoBehaviour
     {
 	    shotDirectrion = cam.transform.TransformDirection(Vector3.forward);
 	    // shotVFX.Play();
-	    // shotSound.Play();
+	    shotSound.Play();
 	    // anim.clip = shotAnim;
 	    // anim.Play();
 	    // foreach (AnimationState state in anim) state.speed = animSpeed;
@@ -47,7 +46,7 @@ public class Weapon : MonoBehaviour
 	    Physics.Raycast(cam.gameObject.transform.position, shotDirectrion, out var hit, range);
 	    if (hit.collider != null && hit.transform.gameObject.TryGetComponent<HealthSystem>(out var hittable))
 	    {
-		    hittable.Health -= damage;
+		    hittable.GetDamage(damage);
 	    }
 
 	    canShoot = false;
