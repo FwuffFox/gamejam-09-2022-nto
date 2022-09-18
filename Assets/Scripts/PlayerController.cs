@@ -50,7 +50,8 @@ public class PlayerController : MonoBehaviour
         var horizontalInput = Input.GetAxis("Horizontal");
 
         Vector3 move = transform.right * horizontalInput + transform.forward * verticalInput;
-        characterController.Move(Quaternion.Euler(0, yRotation, 0) * move * (speed * Time.deltaTime));
+        var curSpeed = Input.GetKey(KeyCode.LeftShift) && isGrounded ? speed * 2 : speed;
+        characterController.Move(Quaternion.Euler(0, yRotation, 0) * move * (curSpeed * Time.deltaTime));
         
         // if grounded remove gravity
         if (isGrounded && velocity.y < 0) velocity.y = -2f;
