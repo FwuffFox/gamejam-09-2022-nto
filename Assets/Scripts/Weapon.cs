@@ -19,7 +19,7 @@ public class Weapon : MonoBehaviour
 	private Vector3 shotDirectrion;
 	
 	[Header("Player settings")]
-	public Camera cam;
+	public Transform cam;
 	
     void Awake() 
     {
@@ -36,8 +36,8 @@ public class Weapon : MonoBehaviour
 
     public void Shoot()
     {
-	    shotDirectrion = cam.transform.TransformDirection(Vector3.forward);
-	    // shotVFX.Play();
+	    shotDirectrion = cam.TransformDirection(Vector3.forward);
+	    shotVFX.Play();
 	    shotSound.Play();
 	    // anim.clip = shotAnim;
 	    // anim.Play();

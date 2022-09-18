@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3480057825977384319}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground Check
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 3480057826886038894}
   - component: {fileID: 3480057826886038893}
   - component: {fileID: 3480057826886038892}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,9 +127,9 @@ GameObject:
   - component: {fileID: 382253031}
   - component: {fileID: 2745826785693449324}
   - component: {fileID: 5883738329979130690}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -286,6 +286,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pirate
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5fa7ef20991635540b28d99953a712f9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa7ef20991635540b28d99953a712f9, type: 3}
 --- !u!4 &2378382787453366671 stripped
@@ -300,6 +304,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3480057826886038894}
     m_Modifications:
+    - target: {fileID: 1224877432704354297, guid: e87bbdc409472bf49aaea275943acb8a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2165842044682462938, guid: e87bbdc409472bf49aaea275943acb8a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2433206638753209577, guid: e87bbdc409472bf49aaea275943acb8a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -315,10 +327,18 @@ PrefabInstance:
     - target: {fileID: 2586342565818837756, guid: e87bbdc409472bf49aaea275943acb8a, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 3480057826886038893}
+      objectReference: {fileID: 3480057826886038894}
+    - target: {fileID: 5799595948603977694, guid: e87bbdc409472bf49aaea275943acb8a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7271265962029365944, guid: e87bbdc409472bf49aaea275943acb8a, type: 3}
       propertyPath: m_Name
       value: Pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271265962029365944, guid: e87bbdc409472bf49aaea275943acb8a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7647622503376009696, guid: e87bbdc409472bf49aaea275943acb8a, type: 3}
       propertyPath: m_PlayOnAwake

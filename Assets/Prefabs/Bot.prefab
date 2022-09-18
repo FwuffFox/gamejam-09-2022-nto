@@ -74,6 +74,8 @@ GameObject:
   - component: {fileID: 9171857686958744415}
   - component: {fileID: -400282725277526351}
   - component: {fileID: 2604913553733267998}
+  - component: {fileID: 7429369285744877784}
+  - component: {fileID: 2944968737663058657}
   m_Layer: 0
   m_Name: Bot
   m_TagString: Untagged
@@ -128,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a919f10779d49ff4fbf33c597e1c430c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   dieAnim: {fileID: 0}
 --- !u!114 &-400282725277526351
 MonoBehaviour:
@@ -141,6 +144,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 622155ae2e78c0e458c5a18bc9e362e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  canSeePlayer: 0
+  canShootPlayer: 0
+  sightRange: 100
 --- !u!111 &2604913553733267998
 Animation:
   m_ObjectHideFlags: 0
@@ -156,6 +168,44 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!195 &7429369285744877784
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7572942647425780033}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 37.23
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!54 &2944968737663058657
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7572942647425780033}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 10
+  m_CollisionDetection: 0
 --- !u!1 &7572942647442079646
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +294,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7572942647233489501}
     m_Modifications:
+    - target: {fileID: 2586342565818837756, guid: e87bbdc409472bf49aaea275943acb8a, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 7572942647233489501}
     - target: {fileID: 7271265962029365944, guid: e87bbdc409472bf49aaea275943acb8a, type: 3}
       propertyPath: m_Name
       value: Pistol
