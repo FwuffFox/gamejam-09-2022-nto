@@ -53,4 +53,5 @@ public class Weapon : MonoBehaviour
 	    canShoot = false;
 	    StartCoroutine(Reload());
     }
+    
 }
