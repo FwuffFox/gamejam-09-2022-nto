@@ -5,15 +5,15 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    private const float Gravity = -9.81f;
     private CharacterController characterController;
-    [SerializeField] private float jumpHeight = 5.0f;
+    [SerializeField] private float jumpHeight = 2.5f;
     [SerializeField] private Camera playerCamera;
-    [Range(0f, 20f)] public float sensitivity = 10.0f;
-    [Range(0f, 100f)] public float speed = 20.0f;
+    [Range(0f, 20f)] public float sensitivity = 5f;
+    [Range(0f, 100f)] public float speed = 10f;
     private float xRotation;
     private float yRotation;
-
-    private const float Gravity = -9.81f;
+    
     public Transform groundCheck;
     [SerializeField] private LayerMask groundMask;
     private bool isGrounded;
@@ -32,12 +32,12 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         MovementCalculation();
-        // WeaponCalculation();
+        WeaponCalculation();
     }
 
     private void MovementCalculation()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, 0.4f, groundMask);
+        isGrounded = characterController.isGrounded;
 
         xRotation += Input.GetAxis("Mouse Y") * sensitivity * Time.timeScale;
         xRotation = Mathf.Clamp(xRotation, -60.0f, 60.0f);
@@ -62,16 +62,6 @@ public class PlayerController : MonoBehaviour
 
     private void WeaponCalculation()
     {
-        if (Input.GetMouseButton(1)) 
-        {
-            playerCamera.fieldOfView = activeWeapon.aimPower;
-            sensitivity /= 4;
-        }
-        else
-        {
-            playerCamera.fieldOfView=60;
-            sensitivity *= 4;
-        }
         if (Input.GetMouseButton(0) && activeWeapon.canShoot)
         {
             activeWeapon.Shoot();

@@ -171,6 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8044389299985473538}
+  - component: {fileID: 2586342565818837756}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
@@ -186,11 +187,34 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7271265962029365944}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 582.353, y: 99.71809, z: 6.078785}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 5801290145218125380}
   - {fileID: 3866931249759606072}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2586342565818837756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7271265962029365944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51677a6b7f0a9e94390a1fc2776d3ddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotSound: {fileID: 0}
+  canShoot: 1
+  damage: 15
+  range: 300
+  animSpeed: 1.3
+  reloadingTime: 1
+  shotVFX: {fileID: 0}
+  shotAnim: {fileID: 0}
+  idleAnim: {fileID: 0}
+  aimPower: 40
+  cam: {fileID: 0}

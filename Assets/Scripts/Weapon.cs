@@ -29,29 +29,28 @@ public class Weapon : MonoBehaviour
 	
     private IEnumerator Reload() 
     {
-	    anim.clip = idleAnim;
-	    anim.Play();
+	    //anim.clip = idleAnim;
+	    //anim.Play();
 	    yield return new WaitForSeconds(reloadingTime);
 	    canShoot = true;
     }
 
-    public void Shoot() 
+    public void Shoot()
     {
 	    shotDirectrion = cam.transform.TransformDirection(Vector3.forward);
-	    shotVFX.Play();
-	    shotSound.Play();
-	    anim.clip = shotAnim;
-	    anim.Play();
-	    foreach (AnimationState state in anim) state.speed = animSpeed;
+	    // shotVFX.Play();
+	    // shotSound.Play();
+	    // anim.clip = shotAnim;
+	    // anim.Play();
+	    // foreach (AnimationState state in anim) state.speed = animSpeed;
 	    Debug.DrawRay(transform.position, shotDirectrion * range, Color.red, 3.0f);
 	    Physics.Raycast(cam.gameObject.transform.position, shotDirectrion, out var hit, range);
-	    if (hit.collider!=null&&hit.collider.gameObject.layer==6) {
-		    //если цель
-		    GameObject hitted = hit.transform.gameObject;
-		    //hitted.GetComponent<enemyHealth>().health-=damage;
+	    if (hit.collider != null && hit.transform.gameObject.TryGetComponent<HealthSystem>(out var hittable))
+	    {
+		    hittable.Health -= damage;
 	    }
+
 	    canShoot = false;
 	    StartCoroutine(Reload());
     }
-    
 }
