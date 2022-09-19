@@ -1,6 +1,6 @@
 using System;
-using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
@@ -66,5 +66,10 @@ public class PlayerController : MonoBehaviour
         {
             activeWeapon.Shoot();
         }
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
