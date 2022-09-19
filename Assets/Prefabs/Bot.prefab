@@ -153,6 +153,7 @@ MonoBehaviour:
   canSeePlayer: 0
   canShootPlayer: 0
   sightRange: 100
+  speed: 1
 --- !u!111 &2604913553733267998
 Animation:
   m_ObjectHideFlags: 0

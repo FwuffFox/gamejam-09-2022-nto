@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -626,7 +626,7 @@ Terrain:
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 336ab77fee0eae049ba104b466dc9e24, type: 2}
   m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
+  m_TreeBillboardDistance: 1000
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
@@ -6417,31 +6417,31 @@ Transform:
   - {fileID: 1507608001}
   - {fileID: 1977764732}
   - {fileID: 1137998625}
-  - {fileID: 1697947559}
   - {fileID: 1126620421}
   - {fileID: 1855958814}
   - {fileID: 475222580}
-  - {fileID: 68372301}
+  - {fileID: 1697947559}
   - {fileID: 2081845941}
-  - {fileID: 1774899100}
+  - {fileID: 68372301}
   - {fileID: 760265669}
-  - {fileID: 1252606686}
   - {fileID: 830633686}
-  - {fileID: 383986874}
+  - {fileID: 1252606686}
+  - {fileID: 1774899100}
   - {fileID: 605576149}
-  - {fileID: 1473401369}
+  - {fileID: 383986874}
   - {fileID: 1878852573}
   - {fileID: 1164335915}
-  - {fileID: 1425731312}
+  - {fileID: 1473401369}
   - {fileID: 227168042}
-  - {fileID: 1499091126}
+  - {fileID: 1425731312}
   - {fileID: 1021648438}
   - {fileID: 852523920}
+  - {fileID: 1499091126}
   - {fileID: 714599234}
   - {fileID: 1095401160}
-  - {fileID: 1677337578}
   - {fileID: 163517542}
   - {fileID: 531155183}
+  - {fileID: 1677337578}
   - {fileID: 90874001}
   - {fileID: 1725817100}
   - {fileID: 893215051}
