@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
-	[SerializeField] private int health = 100;
+	[SerializeField] public int health = 100;
 
 	[SerializeField]
 	private AnimationClip dieAnim;

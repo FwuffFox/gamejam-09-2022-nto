@@ -1,11 +1,15 @@
+using System;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SpawnManager : MonoBehaviour
 {
     public Transform[] spawnPoints;
     public GameObject playerPreset;
     public GameObject botPreset;
+
+    public static Action onSpawnFinished;
 
     private void Start()
     {
@@ -18,5 +22,6 @@ public class SpawnManager : MonoBehaviour
             Instantiate(botPreset, spawnPoints[i]);
         }
         Instantiate(playerPreset, spawnPoints[randomSpawn]);
+        onSpawnFinished?.Invoke();
     }
 }

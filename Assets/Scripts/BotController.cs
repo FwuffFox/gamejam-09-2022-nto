@@ -22,9 +22,10 @@ public class BotController : MonoBehaviour
     {
         botController = GetComponent<CharacterController>();
         activeWeapon = GetComponentInChildren<Weapon>();
+        SpawnManager.onSpawnFinished += AssignFields;
     }
 
-    private void Start()
+    private void AssignFields()
     {
         player = GameObject.FindWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
@@ -32,6 +33,7 @@ public class BotController : MonoBehaviour
 
     private void Update()
     {
+        if (player == null) return;
         canSeePlayer = Physics.CheckSphere(transform.position, sightRange, playerLayer);
         canShootPlayer = Physics.CheckSphere(transform.position, activeWeapon.range, playerLayer);
         if (canSeePlayer) ApproachEnemy();
@@ -47,7 +49,6 @@ public class BotController : MonoBehaviour
     private void FightEnemy()
     {
         transform.LookAt(player);
-        agent.destination = transform.position;
         if (activeWeapon.canShoot) activeWeapon.Shoot();
     }
     
