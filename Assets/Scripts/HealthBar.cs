@@ -6,6 +6,7 @@ public class HealthBar : MonoBehaviour
 {
     private Slider healthBar;
     private HealthSystem playerHealth;
+    private Text healthText;
 
     private void Awake()
     {
@@ -16,11 +17,14 @@ public class HealthBar : MonoBehaviour
     private void Start()
     {
         healthBar = GetComponent<Slider>();
+        healthText = GetComponentInChildren<Text>();
         healthBar.maxValue = 100;
     }
     
     private void Update()
     {
-        if (playerHealth != null) healthBar.value = playerHealth.health;
+        if (playerHealth == null) return;
+        healthBar.value = playerHealth.health;
+        healthText.text = playerHealth.health.ToString();
     }
 }
