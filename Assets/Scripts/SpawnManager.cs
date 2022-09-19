@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 public class SpawnManager : MonoBehaviour
 {
-    public Transform[] spawnPoints;
+    public SpawnPoint[] spawnPoints;
     public GameObject playerPreset;
     public GameObject botPreset;
 
@@ -13,15 +13,15 @@ public class SpawnManager : MonoBehaviour
 
     private void Start()
     {
-        spawnPoints = gameObject.GetComponentsInChildren<Transform>();
+        spawnPoints = gameObject.GetComponentsInChildren<SpawnPoint>();
         var randomSpawn = Random.Range(0, spawnPoints.Length);
-        for (int i = 0; i < spawnPoints.Length; i++)
+        for (var i = 0; i < spawnPoints.Length; i++)
         {
             if (i == randomSpawn) continue;
-            if (spawnPoints[i].transform.position == transform.position) continue;
-            Instantiate(botPreset, spawnPoints[i]);
+            if (spawnPoints[i].transform.position == Vector3.zero) continue;
+            Instantiate(botPreset, spawnPoints[i].transform);
         }
-        Instantiate(playerPreset, spawnPoints[randomSpawn]);
+        Instantiate(playerPreset, spawnPoints[randomSpawn].transform);
         onSpawnFinished?.Invoke();
     }
 }

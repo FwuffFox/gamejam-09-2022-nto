@@ -44,7 +44,7 @@ public class BotController : MonoBehaviour
     {
         transform.LookAt(player.transform, Vector3.up);
         var step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
+        botController.Move(Quaternion.Euler(0, transform.rotation.y, 0) * transform.forward * (speed * Time.deltaTime));
     }
     
     private void FightEnemy()
